@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlySmart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://media.istockphoto.com/id/137004182/photo/xl-jet-airplane-landing-in-bright-sky.jpg?s=612x612&w=0&k=20&c=PC5wJh9j3PB09ZQCSRDfTfHBai3-1-6qjLrnQ9aM4fk=') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="month"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 105%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FlySmart</h1>
+        <form action="/search" method="post">
+            <label for="from_entity_id">Departure City:</label>
+            <input type="text" id="from_entity_id" name="from_entity_id" placeholder="MAA" required>
+
+            <label for="to_entity_id">Destination City:</label>
+            <input type="text" id="to_entity_id" name="to_entity_id" placeholder="COK" required>
+
+            <label for="year_month">Date:</label>
+            <input type="month" id="year_month" name="year_month"  required>
+
+            <button type="submit">Find Flights</button>
+        </form>
+    </div>
+</body>
+</html>

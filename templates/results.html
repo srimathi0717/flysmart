@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://media.istockphoto.com/id/137004182/photo/xl-jet-airplane-landing-in-bright-sky.jpg?s=612x612&w=0&k=20&c=PC5wJh9j3PB09ZQCSRDfTfHBai3-1-6qjLrnQ9aM4fk=') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .flight-detail {
+            margin-bottom: 20px;
+        }
+
+        .flight-detail p {
+            margin: 5px 0;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .visualization {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .visualization img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        <h2>Least Price: ${{ least_price }}</h2>
+        
+        <h3>Flight Details:</h3>
+        {% for detail in flight_details %}
+            <div class="flight-detail">
+                <p><strong>Flight Type:</strong> {{ detail.FlightType }}</p>
+                <p><strong>Departure City:</strong> {{ detail.DepartureCity }}</p>
+                <p><strong>Arrival City:</strong> {{ detail.ArrivalCity }}</p>
+                <p><strong>Flight Date:</strong> {{ detail.FlightDate }}</p>
+                <p><strong>Airline:</strong> {{ detail.Airline }}</p>
+                <p><strong>Airline Code:</strong> {{ detail.AirlineCode }}</p>
+            </div>
+        {% endfor %}
+        
+        <div class="visualization">
+            <h3>Flight Price Distribution</h3>
+            <img src="data:image/png;base64,{{ image_base64 }}" alt="Flight Price Distribution">
+        </div>
+
+        <a href="/" class="back-link">Search again</a>
+    </div>
+</body>
+</html>
